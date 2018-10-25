@@ -11,7 +11,7 @@ agents = []
 num_of_agents = 10
 num_of_iterations = 5000
 
-matplotlib.pyplot.clf
+
 matplotlib.pyplot.ylim(0, 99)
 matplotlib.pyplot.xlim(0, 99)
 
