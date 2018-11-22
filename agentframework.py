@@ -34,13 +34,14 @@ class Agent(object):
 
     def share_with_neighbours(self, neighbourhood):
          for agent in self.agents:
-             dist = self.distance_between(agent) 
-             if dist <= neighbourhood:
-                 sum = self.store + agent.store
-                 ave = sum /2
-                 self.store = ave
-                 agent.store = ave
-                 print("sharing " + str(dist) + " " + str(ave))
+             if agent != self: # don't want to share with myself
+                 dist = self.distance_between(agent) 
+                 if dist <= neighbourhood:
+                     sum = self.store + agent.store
+                     ave = sum /2
+                     self.store = ave
+                     agent.store = ave
+                     #print("sharing " + str(dist) + " " + str(ave))
       
     def distance_between(self, agent):
         return (((self._x - agent._x)**2) + ((self._y - agent._y)**2))**0.5 
